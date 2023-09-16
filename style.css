@@ -416,6 +416,18 @@ footer h4 {
           flex: 1 1 40rem;
 }
 
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+} 
+
 @media screen and (max-width: 1332px) {
   html {
     font-size: 53%;
