@@ -229,15 +229,20 @@
                 <br>
 
                 <p>
-                The goal of this project is to improve transparency and safety in the fast food industry, enabling consumers to make informed decisions about where to eat and providing regulatory authorities with the ability to identify areas for improvement in food safety standards. By addressing these critical public health issues, we contribute to the protection of community health and the promotion of safe practices in the fast food industry.
+                The goal of this project is to improve transparency and safety in the fast food industry, enabling consumers to make informed decisions about where to eat and providing regulatory authorities with the ability to identify areas for improvement in food safety standards. By addressing these critical public health issues, we contribute to the protection of community health and the promotion of safe practices in the fast food industry. A wordcloud is a visual representation of words or terms in which the size of each word is proportional to its frequency or relevance in a dataset. In this case, we want to create a wordcloud with restaurants, where the size of each restaurant is determined by the number of observations or mentions in the database.
                 </p>
                 <br>
 
                 <div style="width: 100%;">
                 <center>
-                     <img src="restaurants_names_wc.png" style="width:1000px;height:450px;"> 
+                     <img src="restaurants_names_wc.png" style="width:900px;height:400px;"> 
                 </center> 
                 </div>
+                <br>
+
+                <p>
+                In general, the wordcloud provides a visual snapshot of the popularity distribution of restaurants in the database. Restaurants that are most mentioned or reviewed stand out and capture attention, while those that are less mentioned take up less space in the visualization. This can help users quickly identify which are the most popular restaurants in the database and which are lesser known. As you move away from the center toward the edges of the wordcloud, less popular or less mentioned restaurants become smaller and less prominent.
+                </p>
                 <br>
 
                 <div class="row">
@@ -261,29 +266,28 @@
                 <br>
 
                 
-
                 <p>
-                        The observation that the mean inspection score decreases as the number of locations in a fast food establishment increases is an interesting finding and suggests several possible conclusions:
+                The observation that the mean inspection score decreases as the number of locations in a fast food establishment increases is an interesting finding and suggests several possible conclusions:
                 </p>
                 <br>
 
                 <p>
-                        Increased Challenge of Maintaining Standards: As more locations are added to a fast food outlet, it can become more difficult to maintain the same hygiene and quality standards in all establishments. This could be due to challenges in managing, supervising and training staff at multiple locations.
+                Increased Challenge of Maintaining Standards: As more locations are added to a fast food outlet, it can become more difficult to maintain the same hygiene and quality standards in all establishments. This could be due to challenges in managing, supervising and training staff at multiple locations.
                 </p>
                 <br>
 
                 <p>
-                        Diversity in Quality: Variability in quality and adherence to standards could increase as the number of locations expands. Some locations could be more stringent in food safety practices than others, affecting the overall average inspection score.
+                Diversity in Quality: Variability in quality and adherence to standards could increase as the number of locations expands. Some locations could be more stringent in food safety practices than others, affecting the overall average inspection score.
                 </p>
                 <br>
 
                 <p>
-                        Scale Effect: Expansion of a fast food business may be associated with rapid growth, which could lead to less attention to detail and proper training of staff. This could result in a decrease in inspection quality.
+                Scale Effect: Expansion of a fast food business may be associated with rapid growth, which could lead to less attention to detail and proper training of staff. This could result in a decrease in inspection quality.
                 </p>
                 <br>
 
                 <p>
-                        Need for Greater Oversight: With a larger number of locations, it may be necessary to implement more robust monitoring systems and stricter quality control processes to ensure that proper standards are maintained at all locations.
+                Need for Greater Oversight: With a larger number of locations, it may be necessary to implement more robust monitoring systems and stricter quality control processes to ensure that proper standards are maintained at all locations.
                 </p> 
                 <br> 
 
@@ -293,19 +297,40 @@
                 <br>
 
                 <p>
-                My degree project in applied mathematics was based on the effects of introducing a delay $\tau$ in the system of differential equations that control the movement of a mobile plate of the MEMS model known as Comb-drive. 
+                My degree project in applied mathematics was based on the effects of introducing a delay in the system of differential equations that control the movement of a mobile plate of the MEMS model known as Comb-drive. My proposal presents an analytical and numerical study of the time-delay Liénard differential equation:
+
                 $$ \begin{equation} \label{combsystem}
-                        \ddot{x} + \gamma\dot{x} + x - u = \frac{4\beta (v_0+G(\dot{x}_{\tau}-\dot{x}))^2x}{(1-x^2)^2}, \quad x \in ]-1,1[, 
-                \end{equation} 
+                        \ddot{x} + \gamma\dot{x} + x - u = \frac{4\beta (v_0+G(\dot{x}_{\tau}-\dot{x}))^2x}{(1-x^2)^2}, \quad x \in ]-1,1[, \quad u \in [0,1[
+                \end{equation}
                 $$
-                Where $G \in \mathbb{R} $, 
+                $$
+                \text{Where }V=V(t) \text{ is a continuous and periodic function}, \text{ } G \in \mathbb{R}, \text{ } \gamma, \text{ } \beta \in \mathbb{R}^+.
+                $$
+                </p>
+                <br>
+
+                <p>
+                We make the following change of variables:
+                $$\begin{equation} \label{changevar2} 
+                        z_1 = x, \quad z_2 = \dot{x} \quad \Rightarrow \quad z_{1\tau}(t) = x(t - \tau), \quad z_{2\tau}(t) = \dot{x}(t - \tau).
+                \end{equation}$$
+                Consequently, the equation remains in the form
+                $$\begin{equation} \label{eq main autonomous2} \left. \begin{aligned}
+                                \dot{z}_1 & = z_2\\
+                                \dot{z}_2 & = \frac{4\beta (v_0+G({z_{2\tau}}-z_2))^2z_1}{(1-z_1^2)^2} - \gamma z_2 - z_1 + u
+                        \end{aligned} \right \rbrace. \end{equation}
+                $$
+                $$
+                \text{Where }z_1 \text{ } \text{is the position and } z_2 \text{ } \text{is the velocity}. 
+                $$ 
+                We have taken reference values for the physical parameters that make up the displaced Comb-drive model, which leave the equation of the form:
                 $$
                 \left. \begin{aligned}
                         \dot{x_1} & = x_2\\
-                        \dot{x_2} & = \frac{38.8539 \times 10^{-4} (2.5-50({x_{2\tau}}-x_2))^2x_1}{(1-x_1^2)^2} - 0.7297 x_2 - x_1 + 0.05
+                        \dot{x_2} & = \frac{38.8539 \times 10^{-4} (v_0+G({x_{2\tau}}-x_2))^2x_1}{(1-x_1^2)^2} - 0.7297 x_2 - x_1 + 0.05
                 \end{aligned} \right \rbrace.
                 $$
-                $x_1$ is the position and $x_2$ is the velocity.
+                The following pictures represent different solutions to the above system by varying the value of constant voltage and feedback amplitude.
                 </p>
                 <br>
                 
@@ -327,7 +352,7 @@
                 </div>
                 <br>
                 <p>
-                In the next image it can be evidenced the effects of the delay $\tau$ in the solutions $x_1$ and $x_2$ of the system. 
+                In the next image it can be evidenced the effects of the delay in the solutions of the system. 
                 </p>
                 <br>
 
